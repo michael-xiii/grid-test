@@ -1,0 +1,9 @@
+{
+  "ssh_keys": {
+    "root": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDT3ysRYSmDySayTvriYns7jadgRRDYlXYrfjGDz4nk/1T0nb2uPid93D436t4s8yGbx4VFQVoIHtPP8M5iV4LvdTXOeLfi+0mWPr1s13GyASu99OY773a0Wwznzk4U2EHv1Grg3H1UrJCdv9H5IByUzWx2hmeWVWSO/LqjL+U5BWF9DsAUKv8QWU3qNLKxEp2TTcYdjIdnlXyVqP2CiIKvjaME/2fQWDl2JsZSE0A00ixcDeEc6hZfnyPtTa/F/Rx+GCD02c2u802nr6yaxkiMDSDM+M20jvcC/qOvQTqw9QrjIs7IlEy8x8KdjZZDgY/j2mu08oLPRDNIa/Ga7tlt root@debian"
+
+  },
+  "recipes": [
+    "sshtunnel"
+  ]
+}
