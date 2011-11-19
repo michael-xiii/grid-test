@@ -1,0 +1,14 @@
+#!/usr/bin/python                                                                                                
+# coding=UTF-8                                                                                                   
+                                                                                                                 
+'''                                                                                                              
+Created on 14.11.2011                                                                                            
+                                                                                                                 
+@author: michael                                                                                                 
+'''                                                                                                              
+import sys                                                                                                       
+from src.sshtunnel.server import SSHTunnelDaemon                                                                     
+                                                                                                                 
+if __name__ == '__main__':                                                                                       
+	daemon = SSHTunnelDaemon()                                                                                 
+	daemon.processAction(sys.argv) 
