@@ -1,0 +1,209 @@
+2011-11-19 23:04:11,124 DEBUG  SSHTunnelServer : Loading config...
+2011-11-19 23:04:11,124 DEBUG  SSHTunnelServer : Loading config [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld-defaults.ini]...
+2011-11-19 23:04:11,125 DEBUG  SSHTunnelServer : Loading configs [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld.ini] [/Users/michael_xiii/.sshtunneld.ini]...
+2011-11-19 23:04:11,126 DEBUG  SSHTunnelServer : Validating config...
+2011-11-19 23:04:11,126 DEBUG  SSHTunnelServer : Apply config...
+2011-11-19 23:04:11,127 DEBUG  SSHTunnelServer : Restoring all tunnels
+2011-11-19 23:04:11,127 DEBUG  SSHTunnelServer : Add tunnel {'firewall_host': '176.9.19.188', 'firewall_user': '__backup', 'remote_port': '80', 'remote_host': '213.133.101.103', 'local_port': '32400'}
+2011-11-19 23:04:11,134 ERROR  SSHTunnelServer : Unable to restore tunnels
+2011-11-19 23:04:11,136 INFO src.sshtunnel.server.SSHTunnelServer starting on 8080
+2011-11-19 23:04:11,136 INFO Starting factory <src.sshtunnel.server.SSHTunnelServer instance at 0x1aa5fa8>
+2011-11-19 23:04:30,424 INFO 127.0.0.1 - - [19/Nov/2011:19:04:30 +0000] "GET /tunnel/list HTTP/1.1" 200 163 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-19 23:04:30,494 INFO 127.0.0.1 - - [19/Nov/2011:19:04:30 +0000] "GET /favicon.ico HTTP/1.1" 404 173 "http://127.0.0.1:8080/tunnel/list" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-19 23:04:45,270 INFO Received SIGINT, shutting down.
+2011-11-19 23:04:45,272 INFO (Port 8080 Closed)
+2011-11-19 23:04:45,272 INFO Stopping factory <src.sshtunnel.server.SSHTunnelServer instance at 0x1aa5fa8>
+2011-11-19 23:04:45,273 INFO Main loop terminated.
+2011-11-20 17:25:51,103 DEBUG  SSHTunnelServer : Loading config...
+2011-11-20 17:25:51,104 DEBUG  SSHTunnelServer : Loading config [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld-defaults.ini]...
+2011-11-20 17:25:51,105 DEBUG  SSHTunnelServer : Loading configs [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld.ini] [/Users/michael_xiii/.sshtunneld.ini]...
+2011-11-20 17:25:51,106 DEBUG  SSHTunnelServer : Validating config...
+2011-11-20 17:25:51,106 DEBUG  SSHTunnelServer : Apply config...
+2011-11-20 17:25:51,107 ERROR Unhandled error in Deferred:
+2011-11-20 17:25:51,111 ERROR Unhandled Error
+Traceback (most recent call last):
+  File "./sshtunnel_cli.py", line 13, in <module>
+    server = src.sshtunnel.server.SSHTunnelServer()
+  File "/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/src/sshtunnel/server.py", line 61, in __init__
+    lp.start(self.config.getint('main', 'check_period'))
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/twisted/internet/task.py", line 83, in start
+    self()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/twisted/internet/task.py", line 114, in __call__
+    d = defer.maybeDeferred(self.f, *self.a, **self.kw)
+--- <exception caught here> ---
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/twisted/internet/defer.py", line 106, in maybeDeferred
+    result = f(*args, **kw)
+  File "/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/src/sshtunnel/server.py", line 69, in checkAndReconnectAll
+    result_data =  self.checkTunnels()
+  File "/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/src/sshtunnel/server.py", line 81, in checkTunnels
+    targetIP = gethostbyname(target)
+exceptions.NameError: global name 'gethostbyname' is not defined
+
+2011-11-20 17:25:51,113 DEBUG  SSHTunnelServer : Restoring all tunnels
+2011-11-20 17:25:51,114 DEBUG  SSHTunnelServer : Add tunnel {'firewall_host': '176.9.19.188', 'firewall_user': '__backup', 'remote_port': '80', 'remote_host': '213.133.101.103', 'local_port': '32400'}
+2011-11-20 17:25:51,123 ERROR  SSHTunnelServer : Unable to restore tunnels
+2011-11-20 17:25:51,125 INFO src.sshtunnel.server.SSHTunnelServer starting on 8080
+2011-11-20 17:25:51,125 INFO Starting factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58e1e8>
+2011-11-20 17:26:19,820 INFO Received SIGINT, shutting down.
+2011-11-20 17:26:19,823 INFO (Port 8080 Closed)
+2011-11-20 17:26:19,824 INFO Stopping factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58e1e8>
+2011-11-20 17:26:19,825 INFO Main loop terminated.
+2011-11-20 17:26:22,661 DEBUG  SSHTunnelServer : Loading config...
+2011-11-20 17:26:22,662 DEBUG  SSHTunnelServer : Loading config [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld-defaults.ini]...
+2011-11-20 17:26:22,662 DEBUG  SSHTunnelServer : Loading configs [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld.ini] [/Users/michael_xiii/.sshtunneld.ini]...
+2011-11-20 17:26:22,663 DEBUG  SSHTunnelServer : Validating config...
+2011-11-20 17:26:22,663 DEBUG  SSHTunnelServer : Apply config...
+2011-11-20 17:26:22,667 DEBUG  SSHTunnelServer : Restoring all tunnels
+2011-11-20 17:26:22,667 DEBUG  SSHTunnelServer : Add tunnel {'firewall_host': '176.9.19.188', 'firewall_user': '__backup', 'remote_port': '80', 'remote_host': '213.133.101.103', 'local_port': '32400'}
+2011-11-20 17:26:22,673 ERROR  SSHTunnelServer : Unable to restore tunnels
+2011-11-20 17:26:22,676 INFO src.sshtunnel.server.SSHTunnelServer starting on 8080
+2011-11-20 17:26:22,676 INFO Starting factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58d238>
+2011-11-20 17:26:28,706 INFO Received SIGINT, shutting down.
+2011-11-20 17:26:28,707 INFO (Port 8080 Closed)
+2011-11-20 17:26:28,708 INFO Stopping factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58d238>
+2011-11-20 17:26:28,708 INFO Main loop terminated.
+2011-11-20 17:27:35,901 DEBUG  SSHTunnelServer : Loading config...
+2011-11-20 17:27:35,902 DEBUG  SSHTunnelServer : Loading config [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld-defaults.ini]...
+2011-11-20 17:27:35,902 DEBUG  SSHTunnelServer : Loading configs [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld.ini] [/Users/michael_xiii/.sshtunneld.ini]...
+2011-11-20 17:27:35,903 DEBUG  SSHTunnelServer : Validating config...
+2011-11-20 17:27:35,903 DEBUG  SSHTunnelServer : Apply config...
+2011-11-20 17:27:35,904 DEBUG  SSHTunnelServer : Restoring all tunnels
+2011-11-20 17:27:35,905 DEBUG  SSHTunnelServer : Add tunnel {'firewall_host': '176.9.19.188', 'firewall_user': '__backup', 'remote_port': '80', 'remote_host': '213.133.101.103', 'local_port': '32400'}
+2011-11-20 17:27:35,911 ERROR  SSHTunnelServer : Unable to restore tunnels
+2011-11-20 17:27:35,913 INFO src.sshtunnel.server.SSHTunnelServer starting on 8080
+2011-11-20 17:27:35,913 INFO Starting factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58b5a8>
+2011-11-20 17:28:35,960 ERROR Unhandled error in Deferred:
+2011-11-20 17:28:35,980 ERROR Unhandled Error
+Traceback (most recent call last):
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/twisted/internet/base.py", line 1128, in run
+    self.mainLoop()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/twisted/internet/base.py", line 1137, in mainLoop
+    self.runUntilCurrent()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/twisted/internet/base.py", line 757, in runUntilCurrent
+    call.func(*call.args, **call.kw)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/twisted/internet/task.py", line 114, in __call__
+    d = defer.maybeDeferred(self.f, *self.a, **self.kw)
+--- <exception caught here> ---
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/twisted/internet/defer.py", line 106, in maybeDeferred
+    result = f(*args, **kw)
+  File "/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/src/sshtunnel/server.py", line 69, in checkAndReconnectAll
+    result_data =  self.checkTunnels()
+  File "/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/src/sshtunnel/server.py", line 86, in checkTunnels
+    s = socket(AF_INET, SOCK_STREAM)
+exceptions.NameError: global name 'AF_INET' is not defined
+
+2011-11-20 17:28:58,587 INFO Received SIGINT, shutting down.
+2011-11-20 17:28:58,594 INFO (Port 8080 Closed)
+2011-11-20 17:28:58,594 INFO Stopping factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58b5a8>
+2011-11-20 17:28:58,595 INFO Main loop terminated.
+2011-11-20 17:29:01,025 DEBUG  SSHTunnelServer : Loading config...
+2011-11-20 17:29:01,025 DEBUG  SSHTunnelServer : Loading config [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld-defaults.ini]...
+2011-11-20 17:29:01,026 DEBUG  SSHTunnelServer : Loading configs [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld.ini] [/Users/michael_xiii/.sshtunneld.ini]...
+2011-11-20 17:29:01,028 DEBUG  SSHTunnelServer : Validating config...
+2011-11-20 17:29:01,028 DEBUG  SSHTunnelServer : Apply config...
+2011-11-20 17:29:01,039 DEBUG  SSHTunnelServer : Restoring all tunnels
+2011-11-20 17:29:01,039 DEBUG  SSHTunnelServer : Add tunnel {'firewall_host': '176.9.19.188', 'firewall_user': '__backup', 'remote_port': '80', 'remote_host': '213.133.101.103', 'local_port': '32400'}
+2011-11-20 17:29:01,089 ERROR  SSHTunnelServer : Unable to restore tunnels
+2011-11-20 17:29:01,091 INFO src.sshtunnel.server.SSHTunnelServer starting on 8080
+2011-11-20 17:29:01,091 INFO Starting factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58e260>
+2011-11-20 17:29:40,704 INFO 127.0.0.1 - - [20/Nov/2011:13:29:40 +0000] "GET /tunnel/list HTTP/1.1" 200 163 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:29:46,376 ERROR  SSHTunnelCheckJsonResource : JSON Error [ERROR_INTERNAL] [Unable to process request [an integer is required]]
+2011-11-20 17:29:46,377 INFO 127.0.0.1 - - [20/Nov/2011:13:29:46 +0000] "GET /tunnel/check HTTP/1.1" 200 100 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:29:55,696 INFO 127.0.0.1 - - [20/Nov/2011:13:29:55 +0000] "GET /test HTTP/1.1" 200 1133 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:30:01,045 ERROR Unhandled error in Deferred:
+2011-11-20 17:30:01,053 ERROR Unhandled Error
+Traceback (most recent call last):
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/twisted/internet/base.py", line 1128, in run
+    self.mainLoop()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/twisted/internet/base.py", line 1137, in mainLoop
+    self.runUntilCurrent()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/twisted/internet/base.py", line 757, in runUntilCurrent
+    call.func(*call.args, **call.kw)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/twisted/internet/task.py", line 114, in __call__
+    d = defer.maybeDeferred(self.f, *self.a, **self.kw)
+--- <exception caught here> ---
+  File "/System/Library/Frameworks/Python.framework/Versions/2.6/Extras/lib/python/twisted/internet/defer.py", line 106, in maybeDeferred
+    result = f(*args, **kw)
+  File "/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/src/sshtunnel/server.py", line 69, in checkAndReconnectAll
+    result_data =  self.checkTunnels()
+  File "/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/src/sshtunnel/server.py", line 87, in checkTunnels
+    res = s.connect_ex((targetIP, port))
+  File "<string>", line 1, in connect_ex
+    
+exceptions.TypeError: an integer is required
+
+2011-11-20 17:30:55,418 INFO Received SIGINT, shutting down.
+2011-11-20 17:30:55,423 INFO (Port 8080 Closed)
+2011-11-20 17:30:55,424 INFO Stopping factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58e260>
+2011-11-20 17:30:55,424 INFO Main loop terminated.
+2011-11-20 17:31:28,486 DEBUG  SSHTunnelServer : Loading config...
+2011-11-20 17:31:28,486 DEBUG  SSHTunnelServer : Loading config [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld-defaults.ini]...
+2011-11-20 17:31:28,487 DEBUG  SSHTunnelServer : Loading configs [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld.ini] [/Users/michael_xiii/.sshtunneld.ini]...
+2011-11-20 17:31:28,488 DEBUG  SSHTunnelServer : Validating config...
+2011-11-20 17:31:28,488 DEBUG  SSHTunnelServer : Apply config...
+2011-11-20 17:31:28,489 DEBUG  SSHTunnelServer : Restoring all tunnels
+2011-11-20 17:31:28,490 DEBUG  SSHTunnelServer : Add tunnel {'firewall_host': '176.9.19.188', 'firewall_user': '__backup', 'remote_port': '80', 'remote_host': '213.133.101.103', 'local_port': '32400'}
+2011-11-20 17:31:28,496 ERROR  SSHTunnelServer : Unable to restore tunnels
+2011-11-20 17:31:28,498 INFO src.sshtunnel.server.SSHTunnelServer starting on 8080
+2011-11-20 17:31:28,498 INFO Starting factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58e260>
+2011-11-20 17:31:34,468 ERROR  SSHTunnelCheckJsonResource : JSON Error [ERROR_INTERNAL] [Unable to process request [connect_ex() takes exactly one argument (2 given)]]
+2011-11-20 17:31:34,469 INFO 127.0.0.1 - - [20/Nov/2011:13:31:33 +0000] "GET /tunnel/check HTTP/1.1" 200 127 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:31:48,309 INFO Received SIGINT, shutting down.
+2011-11-20 17:31:48,310 INFO (Port 8080 Closed)
+2011-11-20 17:31:48,311 INFO Stopping factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58e260>
+2011-11-20 17:31:48,311 INFO Main loop terminated.
+2011-11-20 17:32:12,163 DEBUG  SSHTunnelServer : Loading config...
+2011-11-20 17:32:12,163 DEBUG  SSHTunnelServer : Loading config [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld-defaults.ini]...
+2011-11-20 17:32:12,164 DEBUG  SSHTunnelServer : Loading configs [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld.ini] [/Users/michael_xiii/.sshtunneld.ini]...
+2011-11-20 17:32:12,164 DEBUG  SSHTunnelServer : Validating config...
+2011-11-20 17:32:12,164 DEBUG  SSHTunnelServer : Apply config...
+2011-11-20 17:32:12,165 DEBUG  SSHTunnelServer : Restoring all tunnels
+2011-11-20 17:32:12,166 DEBUG  SSHTunnelServer : Add tunnel {'firewall_host': '176.9.19.188', 'firewall_user': '__backup', 'remote_port': '80', 'remote_host': '213.133.101.103', 'local_port': '32400'}
+2011-11-20 17:32:12,173 ERROR  SSHTunnelServer : Unable to restore tunnels
+2011-11-20 17:32:12,174 INFO src.sshtunnel.server.SSHTunnelServer starting on 8080
+2011-11-20 17:32:12,174 INFO Starting factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58e260>
+2011-11-20 17:32:15,043 INFO 127.0.0.1 - - [20/Nov/2011:13:32:14 +0000] "GET /tunnel/check HTTP/1.1" 200 27 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:34:07,896 INFO 127.0.0.1 - - [20/Nov/2011:13:34:07 +0000] "GET /tunnel/list HTTP/1.1" 200 163 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:35:31,017 INFO Received SIGINT, shutting down.
+2011-11-20 17:35:31,025 INFO (Port 8080 Closed)
+2011-11-20 17:35:31,026 INFO Stopping factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58e260>
+2011-11-20 17:35:31,027 INFO Main loop terminated.
+2011-11-20 17:35:33,388 DEBUG  SSHTunnelServer : Loading config...
+2011-11-20 17:35:33,388 DEBUG  SSHTunnelServer : Loading config [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld-defaults.ini]...
+2011-11-20 17:35:33,389 DEBUG  SSHTunnelServer : Loading configs [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld.ini] [/Users/michael_xiii/.sshtunneld.ini]...
+2011-11-20 17:35:33,390 DEBUG  SSHTunnelServer : Validating config...
+2011-11-20 17:35:33,390 DEBUG  SSHTunnelServer : Apply config...
+2011-11-20 17:35:33,392 DEBUG  SSHTunnelServer : Restoring all tunnels
+2011-11-20 17:35:33,392 DEBUG  SSHTunnelServer : Add tunnel {'firewall_host': '176.9.19.188', 'firewall_user': '__backup', 'remote_port': '80', 'remote_host': '213.133.101.103', 'local_port': '32400'}
+2011-11-20 17:35:33,598 ERROR  SSHTunnelServer : Unable to restore tunnels
+2011-11-20 17:35:33,599 INFO src.sshtunnel.server.SSHTunnelServer starting on 8080
+2011-11-20 17:35:33,600 INFO Starting factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58b5a8>
+2011-11-20 17:35:39,701 INFO 127.0.0.1 - - [20/Nov/2011:13:35:39 +0000] "GET /test HTTP/1.1" 200 1244 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:35:41,957 INFO 127.0.0.1 - - [20/Nov/2011:13:35:41 +0000] "GET /tunnel/check HTTP/1.1" 200 27 "http://127.0.0.1:8080/test" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:35:44,037 INFO 127.0.0.1 - - [20/Nov/2011:13:35:43 +0000] "GET /test HTTP/1.1" 200 1244 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:35:45,334 INFO 127.0.0.1 - - [20/Nov/2011:13:35:44 +0000] "GET /tunnel/list HTTP/1.1" 200 163 "http://127.0.0.1:8080/test" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:35:54,481 INFO 127.0.0.1 - - [20/Nov/2011:13:35:53 +0000] "GET /test HTTP/1.1" 200 1244 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:36:09,741 INFO 127.0.0.1 - - [20/Nov/2011:13:36:08 +0000] "GET /test HTTP/1.1" 200 1244 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:36:11,804 INFO Received SIGINT, shutting down.
+2011-11-20 17:36:11,808 INFO (Port 8080 Closed)
+2011-11-20 17:36:11,808 INFO Stopping factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58b5a8>
+2011-11-20 17:36:11,809 INFO Main loop terminated.
+2011-11-20 17:36:13,433 DEBUG  SSHTunnelServer : Loading config...
+2011-11-20 17:36:13,434 DEBUG  SSHTunnelServer : Loading config [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld-defaults.ini]...
+2011-11-20 17:36:13,434 DEBUG  SSHTunnelServer : Loading configs [/Users/michael_xiii/Sites/tests/grid-test/SSHTunnelManager/config/sshtunneld.ini] [/Users/michael_xiii/.sshtunneld.ini]...
+2011-11-20 17:36:13,434 DEBUG  SSHTunnelServer : Validating config...
+2011-11-20 17:36:13,434 DEBUG  SSHTunnelServer : Apply config...
+2011-11-20 17:36:13,436 DEBUG  SSHTunnelServer : Restoring all tunnels
+2011-11-20 17:36:13,436 DEBUG  SSHTunnelServer : Add tunnel {'firewall_host': '176.9.19.188', 'firewall_user': '__backup', 'remote_port': '80', 'remote_host': '213.133.101.103', 'local_port': '32400'}
+2011-11-20 17:36:13,447 ERROR  SSHTunnelServer : Unable to restore tunnels
+2011-11-20 17:36:13,448 INFO src.sshtunnel.server.SSHTunnelServer starting on 8080
+2011-11-20 17:36:13,448 INFO Starting factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58b5a8>
+2011-11-20 17:36:13,481 INFO 127.0.0.1 - - [20/Nov/2011:13:36:13 +0000] "GET /test HTTP/1.1" 200 1258 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:36:37,252 INFO 127.0.0.1 - - [20/Nov/2011:13:36:36 +0000] "GET /tunnel/check HTTP/1.1" 200 27 "http://127.0.0.1:8080/test" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:36:42,208 INFO 127.0.0.1 - - [20/Nov/2011:13:36:41 +0000] "GET /test HTTP/1.1" 200 1258 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:36:43,330 INFO 127.0.0.1 - - [20/Nov/2011:13:36:42 +0000] "GET /tunnel/list HTTP/1.1" 200 163 "http://127.0.0.1:8080/test" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:36:47,942 INFO 127.0.0.1 - - [20/Nov/2011:13:36:47 +0000] "GET /test HTTP/1.1" 200 1258 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/534.51.22 (KHTML, like Gecko) Version/5.1.1 Safari/534.51.22"
+2011-11-20 17:38:27,185 INFO Received SIGINT, shutting down.
+2011-11-20 17:38:27,194 INFO (Port 8080 Closed)
+2011-11-20 17:38:27,197 INFO Stopping factory <src.sshtunnel.server.SSHTunnelServer instance at 0x58b5a8>
+2011-11-20 17:38:27,200 INFO Main loop terminated.
