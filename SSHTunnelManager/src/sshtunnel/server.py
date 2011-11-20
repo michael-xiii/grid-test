@@ -6,6 +6,8 @@ Created on 02.08.2010
 '''
 import os
 import procname
+from subprocess import Popen
+from socket import socket, gethostbyname, AF_INET, SOCK_STREAM
 
 import twisted.web.server
 from twisted.internet import reactor
@@ -13,18 +15,18 @@ from twisted.internet.task import LoopingCall
 
 from src.libs.fast.core import FastServer, FastDbServer, FastConfigObject, FastObject
 from src.libs.fast.fasttwisted import FastServerIndexResource
-
 from src.libs.daemon import Daemon
 
 from src.sshtunnel import resources
-from subprocess import Popen
+
+
 
 #==============================================================================
 class SSHTunnelServer(FastServer, twisted.web.server.Site):
     logging      = True
     # own
     config_file  = 'sshtunneld'
-    name         = 'SSH Tunnel Daemon'
+    name         = 'SSH Tunnel Manager'
     version      = '0.1'
 
     port         = 8080
@@ -51,20 +53,45 @@ class SSHTunnelServer(FastServer, twisted.web.server.Site):
         tunnel.putChild('start', resources.SSHTunnelStartJsonResource(server=self))
         tunnel.putChild('end', resources.SSHTunnelEndJsonResource(server=self))
         tunnel.putChild('check', resources.SSHTunnelCheckJsonResource(server=self))
+        tunnel.putChild('list', resources.SSHTunnelListJsonResource(server=self))
         twisted.web.server.Site.__init__(self, index)
         
 
-        lp = LoopingCall(self.checkTunnels)
-        lp.start(1.0)
+        lp = LoopingCall(self.checkAndReconnectAll)
+        lp.start(self.config.getint('main', 'check_period'))
+        
         self.save_file = os.path.join(self.dir, 'config', 'save.dat')  
         
         self.loadAllTunnels()
+        
+    #--------------------------------------------------------------------------
+    def checkAndReconnectAll(self):
+        result_data =  self.checkTunnels()
+        
+        for port, result in result_data.iteritems():
+            if not result:
+                tunnel = self.tunnels[port]
+                self.removeTunnel(port)
+                self.addTunnel(tunnel)
             
 
     #--------------------------------------------------------------------------
     def checkTunnels(self):
-        #self._log('Looping call')
-        pass        
+        target = "localhost"
+        targetIP = gethostbyname(target)
+        
+        result = {}
+        
+        for port, data in self.tunnels.iteritems():
+            s = socket(AF_INET, SOCK_STREAM)
+            res = s.connect_ex((targetIP, int(port)))
+     
+            result[port] = (res != 0)
+            
+            s.close()
+
+        return result 
+               
 
     #--------------------------------------------------------------------------
     def saveAllTunnels(self):
@@ -122,6 +149,19 @@ class SSHTunnelServer(FastServer, twisted.web.server.Site):
         self.processes[local_port] = p 
         self.tunnels[local_port] = tunnel
         return cmd
+    
+    #--------------------------------------------------------------------------
+    def removeTunnel(self, port):
+        if port in self.processes:
+            #self._server.processes[local_port].terminate()
+            p = self.processes[port]
+            p.kill()
+            cmd = 'kill %s' % p.pid
+            # @todo check result
+            Popen(cmd, shell=True)
+
+        if port in self.tunnels:
+            del self.tunnels[port]        
         
 
     

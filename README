@@ -1,0 +1,95 @@
+README for Test task 
+====================
+
+Description
+===========
+A task realization was splitted to two different parts - a self-made 
+SSH Tunnel Manager and Chef Cookbok for deploing that manager.
+
+This architecture was used for giving more flexibility to a future SSHTunnelManager
+improvements also as a give ability to manage SSH tunnels remotely for another 
+possible clients. 
+
+Access rights for this kind of web-service could be easily set up by HTTP/IP authoriation.
+
+
+Structure of files
+==================
+* SSHTunnelManager - The self-made manager of SSH tunnels with web-api.
+* etc - config file for Chef (used with chef-solo debugging).
+* sshtunnel - The cookbook for Chef, which installed SSHTunnelManager and all 
+		required packages
+
+
+SSHTunnelManager
+================
+
+What is it? - Description
+--------------------------
+This is a *nix daemon, which let us to manage a set of SSH tunnels on remote server. 
+
+It is written on Python + Twisted, recieve and process HTTP requests, 
+listening port 8080 by default. 
+
+Results of processed web-api requests would return in JSON format, including the 
+all possible error messages.
+
+All currently active tunnels saved in SSHTunnelManager/config/save.dat - for 
+restoring these after service restarting.
+
+Also thsi service would periodically check a set of active SSH Tunnels and restart 
+these if it is required.
+
+
+How to use it?
+--------------
+Using of web-service daemon: 
+
+# ./sshtunneld start|stop|restart
+
+Console application (rather userful for debugging
+
+# ./sshtunnel_cli.py 
+
+
+How to manage SSH tunnels? (WEB-API)
+------------------------------------
+All entry point is a relative URLs for services HOST and PORT.
+
+/test - The test page with form of defaul test data
+/tunnel/start - Create a SSH Tunnel with set of POST parameters
+/tunnel/end - Remove SSH Tunnel identified by local port
+/tunnel/check - Get status of active SSH Tunnels
+/tunnel/list - Show list of active SSH Tunnels with full params
+
+
+TODO
+----
+The current known troubles, bugs and TODO tasks located in ./SSHTunnelManager/TODO
+
+
+Chef Cookbook
+=============
+
+How to use?
+-----------
+For debugging in localhost using
+
+# chef-solo -c /etc/chef/solo.rb -j /etc/chef/dna.json
+
+TODO
+----
+* Need to check if public key for server already exists in ~/.ssh/authorized_keys
+* Need to move of url of public key in cookbook config
+
+Spent time
+================
+* Web-service - 3h
+* git research - 1h
+* Chef research - 3h
+* Cookbook write and debugging - 2h
+* Documentation - 3h
+* Total - 12h
+
+
+
