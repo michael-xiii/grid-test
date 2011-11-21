@@ -4,7 +4,7 @@ README for Test task
 Description
 ===========
 A task realization was splitted to two different parts - a self-made 
-SSH Tunnel Manager and Chef Cookbok for deploing that manager.
+SSH Tunnel Manager and Chef Cookbook for deploing that manager.
 
 This architecture was used for giving more flexibility to a future SSHTunnelManager
 improvements also as a give ability to manage SSH tunnels remotely for another 
