@@ -10,15 +10,15 @@ This architecture was used for giving more flexibility to a future SSHTunnelMana
 improvements also as a give ability to manage SSH tunnels remotely for another 
 possible clients. 
 
-Access rights for this kind of web-service could be easily set up by HTTP/IP authoriation.
+Access rights for this kind of web-service could be easily set up by HTTP/IP authorization.
 
 
 Structure of files
 ==================
 * SSHTunnelManager - The self-made manager of SSH tunnels with web-api.
-* etc - config file for Chef (used with chef-solo debugging).
-* sshtunnel - The cookbook for Chef, which installed SSHTunnelManager and all 
-		required packages
+* etc - config file for Chef (used with chef-solo debugging or chef-client).
+* sshtunnel - The cookbook for Cheff for installinig SSHTunnelManager and all 
+		required packages.
 
 
 SSHTunnelManager
@@ -28,16 +28,16 @@ What is it? - Description
 --------------------------
 This is a *nix daemon, which let us to manage a set of SSH tunnels on remote server. 
 
-It is written on Python + Twisted, recieve and process HTTP requests, 
+It is written on Python + Twisted, and recieve and process HTTP requests, 
 listening port 8080 by default. 
 
-Results of processed web-api requests would return in JSON format, including the 
-all possible error messages.
+Results of processed web-api requests returned in JSON format, including the 
+error message - if some trouble happens.
 
-All currently active tunnels saved in SSHTunnelManager/config/save.dat - for 
-restoring these after service restarting.
+All currently active tunnels saved in ./SSHTunnelManager/config/save.dat - for 
+restoring these conections after service restart.
 
-Also thsi service would periodically check a set of active SSH Tunnels and restart 
+Also this service would periodically check a set of active SSH Tunnels and restart 
 these if it is required.
 
 
@@ -47,7 +47,7 @@ Using of web-service daemon:
 
 # ./sshtunneld start|stop|restart
 
-Console application (rather userful for debugging
+Console application (rather userful for debugging)
 
 # ./sshtunnel_cli.py 
 
@@ -81,15 +81,16 @@ TODO
 ----
 * Need to check if public key for server already exists in ~/.ssh/authorized_keys
 * Need to move of url of public key in cookbook config
+* Need to check version of required packages
 
 Spent time
 ================
 * Web-service - 3h
 * git research - 1h
 * Chef research - 3h
-* Cookbook write and debugging - 2h
-* Documentation - 3h
-* Total - 12h
+* Cookbook writting and debugging - 5h
+* Documentation - 2h
+* Total - 14h
 
 
 
